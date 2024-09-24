@@ -9,7 +9,7 @@ import { useState } from "react";
 import { RiLoginCircleLine } from "react-icons/ri";
 
 const Header = () => {
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState(0);
   const navigate = useNavigate();
 
   //   const handleBgToggle = () => {
@@ -18,7 +18,7 @@ const Header = () => {
   // bg-[#5770B652] bg-[#a9c1ff]
   return (
     <div className="md:px-[4%]">
-      <div className="sticky border border-black top-0 shadow-md bg-[#5770B652] md:max-w-4xl lg:max-w-5xl p-3 px-4 md:mx-auto md:my-1.5 md:rounded-md shadow-blue-100 z-50 flex items-center justify-between">
+      <div className="sticky border border-black  top-0 shadow-md   md:max-w-4xl lg:max-w-5xl p-3 px-4 md:mx-auto md:my-1.5 md:rounded-md  z-50 flex items-center justify-between">
         {/* Logo Section */}
         <div
           className="text-3xl font-bold cursor-pointer z-30 stroke-text"
@@ -33,7 +33,7 @@ const Header = () => {
         {/* Navigation */}
         <div>
           <div className="flex justify-center">
-            <div className="flex overflow-x-auto items-center p-1 space-x-1 rtl:space-x-reverse text-sm text-gray-600 bg-gray-500/20 rounded-xl ">
+            <div className="flex overflow-x-auto items-center p-1 space-x-1 rtl:space-x-reverse text-sm text-gray-600 bg-[#3C5997] shadow-sm shadow-slate-200 rounded-xl ">
               {existsInLocalStorage("token") ? (
                 <div>
                   <button
@@ -47,7 +47,7 @@ const Header = () => {
                         : navigate("/");
                     }}
                     type="button"
-                    className={`flex whitespace-nowrap items-center h-8 px-3 font-medium rounded-lg outline-none ${
+                    className={`flex whitespace-nowrap text-white items-center h-8 px-3 font-medium rounded-lg outline-none ${
                       color
                         ? "bg-yellow-600 text-white transition duration-300 "
                         : "text-black transition duration-300 hover:text-gray-800"
@@ -64,7 +64,7 @@ const Header = () => {
                       navigate("/login");
                     }}
                     type="button"
-                    className={`flex whitespace-nowrap font-semibold items-center h-8 px-2 rounded-lg outline-none ${
+                    className={`flex text-white whitespace-nowrap font-semibold items-center h-8 px-2 rounded-lg outline-none ${
                       color
                         ? "bg-yellow-600 text-white transition duration-300 "
                         : "text-black transition duration-300 hover:text-gray-800"
@@ -81,7 +81,7 @@ const Header = () => {
                     navigate("/register");
                   }}
                   type="button"
-                  className={`flex whitespace-nowrap items-center h-8 px-3 font-medium rounded-lg outline-none ${
+                  className={`flex text-white whitespace-nowrap items-center h-8 px-3 font-medium rounded-lg outline-none ${
                     !color
                       ? "bg-yellow-600 text-white transition duration-300 "
                       : "text-black transition duration-300 hover:text-gray-800"

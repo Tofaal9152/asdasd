@@ -118,7 +118,7 @@ export default function BarberInfo() {
                 </div>
                 <div></div>
                 <IconButton
-                    icon={<IoAddCircle size={20} />}
+                    icon={<IoAddCircle size={20} className="ml-1"/>}
                     text="Add Barber"
                     callback={addBarber}
                     direction="right"
