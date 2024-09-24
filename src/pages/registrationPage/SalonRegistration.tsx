@@ -106,13 +106,13 @@ export function SalonRegistration() {
 
   return (
     <div
-      className="rounded-sm glass-bg p-6 m-auto border border-black max-w-[960px]"
+      className="rounded-sm glass-bg p-6 m-auto border border-black max-w-4xl px-[4%]"
       style={{
         backgroundColor: "rgb(87 112 182 / 32%)",
       }}
     >
       <h1
-        className="text-[#d18d32] text-[2rem] font-bold mb-10"
+        className="text-[#d18d32] text-[2rem] text-center font-bold mb-10"
         style={{
           textShadow:
             "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
@@ -120,18 +120,18 @@ export function SalonRegistration() {
       >
         Salon Registration
       </h1>
-      <div className="flex flex-row space-x-10 justify-around">
-        <div className="flex flex-col w-[20rem]">
+      <div className="flex flex-row md:space-x-10 justify-around">
+        <div className=" flex-col w-[20rem] hidden md:flex">
           <img
-            className="h-[25rem] bg-white rounded-xl w-[20rem] bg-opacity-50"
+            className="h-[25rem]  bg-white rounded-xl w-[20rem] bg-opacity-50"
             src={salonReg}
             alt="Salon Registration" />
         </div>
 
-        <div className="border border-black"></div>
+        <div className="border hidden md:flex border-black"></div>
 
         <div>
-          <div className="flex flex-col w-[20rem]">
+          <div className="flex flex-col w-[20rem] mx-auto">
             {/* <label className="relative mb-4">
               <input
                 type="file"
@@ -212,7 +212,7 @@ export function SalonRegistration() {
             }
 
             <IconButton
-              icon={<FaArrowAltCircleRight />}
+              icon={<FaArrowAltCircleRight size={16} className="ml-1" />}
               text="Register"
               callback={onSubmit}
             />
