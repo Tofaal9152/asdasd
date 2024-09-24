@@ -26,7 +26,7 @@ export function Reviews() {
 
 
     return (
-        <div>
+        <div className="">
             <h1 className="text-center font-bold text-[1.5rem] text-[#d18d32]" style={{
                 textShadow:
                     "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",

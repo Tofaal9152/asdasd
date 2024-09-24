@@ -8,7 +8,7 @@ export default function NavigationBar({
   index: number;
 }) {
   return (
-    <div className="h-[86vh] border-black border-2 rounded-xl relative bg-[#ffae482b] flex flex-col space-y-2 pl-3 pr-6 mt-4 pt-12">
+    <div className="h-screen md:h-[86vh] md:border-black md:border-2 md:rounded-xl relative md:bg-[#ffae482b] flex flex-col space-y-2 md:pl-3 md:pr-6 px-4 md:px-0 md:mt-4 pt-4 md:pt-12">
       {navMenuContents.map((item, i) => {
         return (
           <div

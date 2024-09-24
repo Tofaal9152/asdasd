@@ -20,7 +20,6 @@ export default function SalonInfo() {
   const [image, setImage] = useState(
     <img src={imgUpload} alt="Upload image" className="w-24" />
   );
-
   interface SalonInfo {
     image: string | null;
     name: string | null;
@@ -28,16 +27,13 @@ export default function SalonInfo() {
     servicesList: { name: string | undefined; cost: number | null }[];
     barbers: any[];
   }
-
   let [alert, setAlertBox] = useState({
     isError: false,
     message: "",
   });
-
   // Hair Styles
   let [hairstylePrice, setHairstylePrice] = useState<number>(0);
   let [hairstyleIndex, setHairstyleIndex] = useState<number>(-1);
-
   let [salonInfo, setSalonInfo] = useState<SalonInfo>({
     image: null,
     name: null,
@@ -58,7 +54,6 @@ export default function SalonInfo() {
     ],
     barbers: [],
   });
-
   useEffect(() => {
     // set headers
     fetch(`${baseUrl}/api/salon/one/{id}?id=${loadFromLocalStorage("id")}`, {
@@ -107,7 +102,6 @@ export default function SalonInfo() {
         setSalonInfo(data);
       });
   }, []);
-
   const updateInfo = () => {
     // set headers
     fetch(`${baseUrl}/api/salon/update`, {
@@ -150,7 +144,7 @@ export default function SalonInfo() {
       </h1>
 
       {/* Salon Info */}
-      <div className="flex flex-row space-x-4 justify-center mt-[3rem]">
+      <div className="flex flex-col md:flex-row space-x-4 justify-center mt-[3rem]">
         <label className="relative mb-4">
           <input
             type="file"
@@ -183,7 +177,7 @@ export default function SalonInfo() {
           </div>
         </label>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col  items-center ">
           <input
             onChange={(e) => {
               setSalonInfo({ ...salonInfo, name: e.target.value });
@@ -205,9 +199,9 @@ export default function SalonInfo() {
       </div>
 
       {/* Service Info */}
-      <div className="m-auto w-[30rem] my-10">
-        <div className="flex flex-col w-[30rem] space-y-4">
-          <h1 className="font-bold">Add Hairstyle and Other Services price:</h1>
+      <div className="m-auto  my-10">
+        <div className="flex flex-col  space-y-4">
+          <h1 className="font-bold text-center">Add Hairstyle and Other Services price:</h1>
 
           {/* Salon Info Services list table */}
           {
@@ -216,7 +210,7 @@ export default function SalonInfo() {
               (service) => service.cost === null || service.cost === 0
             ) ? (
               <div className="text-center text-red-500 font-bold">
-                No Services Added
+                No Services Added 
               </div>
             ) : (
               <div className="flex flex-col mx-auto w-[30rem] space-y-4 my-10">
@@ -256,7 +250,7 @@ export default function SalonInfo() {
           }
 
           <Swiper
-            className="w-[30rem] h-full"
+            className="sm:w-[30rem] w-[20rem] h-full"
             grabCursor={true}
             slidesPerView={4}
             spaceBetween={150}
@@ -290,10 +284,10 @@ export default function SalonInfo() {
               </SwiperSlide>
             ))}
 
-            <SwiperSlide></SwiperSlide>
+            {/* <SwiperSlide></SwiperSlide> */}
           </Swiper>
 
-          <div className="flex flex-row w-full space-x-4">
+          <div className="flex flex-row items-center w-full space-x-4">
             <input
               onChange={(e) => {
                 setHairstylePrice(parseInt(e.target.value));
@@ -301,10 +295,10 @@ export default function SalonInfo() {
               value={hairstylePrice == 0 ? "" : hairstylePrice}
               type="number"
               placeholder="Price of selected hairstyle"
-              className="border border-black outline-none p-2 rounded-md mt-[1rem] h-[2.2rem] placeholder:text-[.8rem] basis-1/2"
+              className="border border-black outline-none p-2 rounded-md mt-[1rem] h-[2.7rem] placeholder:text-[.8rem] basis-1/2"
             />
             <IconButton
-              className="basis-1/2"
+              className="flex-1 "
               icon={<IoAddCircle size={20} className="ml-1"/>}
               text="Add"
               callback={() => {
@@ -361,6 +355,19 @@ export default function SalonInfo() {
               direction="right"
             />
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           {/* More Services */}
           <input
