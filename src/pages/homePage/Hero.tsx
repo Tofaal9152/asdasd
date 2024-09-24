@@ -10,18 +10,21 @@ import img2 from "../../assets/carouselImg2.jpg";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen max-w-6xl m-auto px-[4%]">
-      <video
-        autoPlay
-        muted
-        loop
-        className="absolute mix-blend-multiply inset-0 w-full h-full  object-left"
-      >
-        <source src={video} />
-      </video>
-      <div className="relative top-[30%] w-full max-w-[26rem] float-right translate-y-[-32%] rounded-lg p-3 bg-[#5770B652]">
+    <div className="relative overflow-auto flex flex-col md:flex-row items-center md:items-start mx-auto px-[4%]">
+      <div className="w-full md:w-1/2 h-auto relative">
+        <video
+          autoPlay
+          muted
+          loop
+          className="mix-blend-multiply w-full h-full object-cover"
+        >
+          <source src={video} />
+        </video>
+      </div>
+
+      <div className="w-full md:w-1/2 max-w-[30rem] h-fit rounded-lg p-4 md:p-6 bg-[#5770B652] mb-4 md:mb-0 mx-auto md:mx-0">
         <GlassCard
-          title="Welcome to SalonSync!"
+          title="Welcome to SalonSync !"
           body={`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'l`}
         />
       </div>
@@ -29,10 +32,12 @@ const Hero = () => {
   );
 };
 
+
+
 const GlassCard = ({ title, body }: { title: string; body: string }) => {
   return (
     <div className="rounded-sm p-3">
-      <h1 className="text-cilor text-2xl font-semibold">{title}</h1>
+      <h1 className="text-cilor text-2xl font-semibold mb-4">{title}</h1>
       <p className="text-cilor text-sm mb-4">{body}</p>
 
       <Swiper

@@ -67,7 +67,7 @@ const Header = () => {
                     className={`flex text-white whitespace-nowrap font-semibold items-center h-8 px-2 rounded-lg outline-none ${
                       color
                         ? "bg-yellow-600 text-white transition duration-300 "
-                        : "text-black transition duration-300 hover:text-gray-800"
+                        : "text-black transition duration-300 "
                     } `}
                   >
                     <RiLoginCircleLine size={18} className="mr-2" />
