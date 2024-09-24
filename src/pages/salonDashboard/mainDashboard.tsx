@@ -13,12 +13,11 @@ import { PiCallBellBold } from "react-icons/pi";
 import { RiInformation2Line } from "react-icons/ri";
 import { Reviews } from "./reviews";
 import { RiMenu2Fill } from "react-icons/ri";
-
+import bg from "../../assets/logRegBG.svg";
 export function MainDashboard() {
   const [pageIndex, setPageIndex] = useState(0);
   const [toggle, settoggle] = useState(false);
   const navigate = useNavigate();
-console.log(toggle);
 
   useEffect(() => {
     // Logout functionality
@@ -29,7 +28,7 @@ console.log(toggle);
       navigate("/");
     }
   }, [pageIndex]);
-  
+
   return (
     <>
       <Header />
@@ -38,7 +37,11 @@ console.log(toggle);
           <div className="flex items-start justify-center space-x-0 md:space-x-4">
             {/* mobile */}
             <div
-              className={`${toggle?"absolute left-0 translate-x-0 duration-300 ease-in-out z-50":"left-[-10rem] absolute -translate-x-full duration-300  ease-in-out"} bg-[#F6EAE0] md:bg-transparent`}
+              className={`${
+                toggle
+                  ? "absolute left-0 translate-x-0 duration-300 ease-in-out z-50"
+                  : "left-[-100rem] absolute -translate-x-full duration-300  ease-in-out"
+              } bg-[#F6EAE0] md:bg-transparent`}
             >
               <span
                 onClick={() => settoggle((e) => !e)}
@@ -77,37 +80,43 @@ console.log(toggle);
             </div>
             {/* pc */}
             <div className="md:block hidden">
-                <NavigationBar
-                  navMenuContents={[
-                    {
-                      title: "Salon Info",
-                      icon: <FaArrowAltCircleRight className="w-6 h-6" />,
-                    },
-                    {
-                      title: "Barber Info",
-                      icon: <RiInformation2Line className="w-6 h-6" />,
-                    },
-                    {
-                      title: "Appointments",
-                      icon: <PiCallBellBold className="w-6 h-6" />,
-                    },
-                    {
-                      title: "Reviews",
-                      icon: <MdInsertComment className="w-6 h-6" />,
-                    },
-                    {
-                      title: "Logout",
-                      icon: <RiLoginCircleLine className="w-6 h-6" />,
-                    },
-                  ]}
-                  setIndex={setPageIndex}
-                  index={pageIndex}
-                />
-              </div>
+              <NavigationBar
+                navMenuContents={[
+                  {
+                    title: "Salon Info",
+                    icon: <FaArrowAltCircleRight className="w-6 h-6" />,
+                  },
+                  {
+                    title: "Barber Info",
+                    icon: <RiInformation2Line className="w-6 h-6" />,
+                  },
+                  {
+                    title: "Appointments",
+                    icon: <PiCallBellBold className="w-6 h-6" />,
+                  },
+                  {
+                    title: "Reviews",
+                    icon: <MdInsertComment className="w-6 h-6" />,
+                  },
+                  {
+                    title: "Logout",
+                    icon: <RiLoginCircleLine className="w-6 h-6" />,
+                  },
+                ]}
+                setIndex={setPageIndex}
+                index={pageIndex}
+              />
+            </div>
 
             {/* Content Area */}
-            <div className="md:h-[86vh] h-screen w-full flex-1 md:border-[#272727a2] md:border-2 md:rounded-xl relative md:mt-4">
-              {/* Responsive Glass Background */}
+            <div
+              className="md:h-[86vh] h-screen w-full flex-1 md:border-[#272727a2] md:border-2 md:rounded-xl relative md:mt-4"
+              style={{
+                background: `url(${bg})`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+              }}
+            >
               <div
                 className="glass-bg flex-1 h-full overflow-y-scroll no-scrollbar"
                 style={{
@@ -211,11 +220,11 @@ console.log(toggle);
 
 //           <div
 //             className="h-[86vh] flex-1 border-[#272727a2] border-2 rounded-xl relative mt-4"
-//             // style={{
-//             //   background: `url(${bg})`,
-//             //   backgroundSize: "contain",
-//             //   backgroundPosition: "center",
-//             // }}
+// style={{
+//   background: `url(${bg})`,
+//   backgroundSize: "contain",
+//   backgroundPosition: "center",
+// }}
 //           >
 //             {/* Container */}
 //             <div

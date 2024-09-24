@@ -18,7 +18,7 @@ const Header = () => {
   // bg-[#5770B652] bg-[#a9c1ff]
   return (
     <div className="md:px-[4%]">
-      <div className="sticky border border-black  top-0 shadow-md   md:max-w-4xl lg:max-w-5xl p-3 px-4 md:mx-auto md:my-1.5 md:rounded-md  z-50 flex items-center justify-between">
+      <div className="sticky border md:border-black  top-0 shadow-md   md:max-w-4xl lg:max-w-5xl p-3 px-4 md:mx-auto md:my-1.5 md:rounded-md  z-50 flex items-center justify-between">
         {/* Logo Section */}
         <div
           className="text-3xl font-bold cursor-pointer z-30 stroke-text"
